@@ -1,9 +1,9 @@
-<img src="http://th0ma5w.github.io/rtl_fm_python.png" align="right" alt="Screenshot" title="rtl_fm_python" border=1>
-
 rtl_fm_python
 =============
 
 An API and web application to interact with a running instance of RTL_FM
+
+<img src="http://th0ma5w.github.io/rtl_fm_python.png" alt="Screenshot" title="rtl_fm_python" border=1>
 
 # What
 
@@ -189,6 +189,10 @@ Sets the device to be in auto gain mode. The gain may read -100 in the above sta
     str_to_freq(human_frequency)
     freq_to_str(frequency)
     printstderr(text) 
+
+# Thanks
+
+The rtl-sdr team and community for being awesome.
 
 
 
