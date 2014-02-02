@@ -7,7 +7,7 @@ An API and web application to interact with a running instance of RTL_FM
 
 # What
 
-This is a Python library is built upon the RTL-SDR project and allows you to use the 
+This is a Python library built upon the RTL-SDR project and allows you to use the 
 RTL-SDR dongle to tune in arbitrary stations either with a simple web application
 running on a built-in server, or programmatically with Python or any language using
 the REST API provided.
