@@ -3,7 +3,7 @@ rtl_fm_python
 
 An API and web application to interact with a running instance of RTL_FM
 
-<img src="http://th0ma5w.github.io/rtl_fm_python.png" alt="Screenshot" title="rtl_fm_python" />
+<img style="border:1px solid #000000;" src="http://th0ma5w.github.io/rtl_fm_python.png" alt="Screenshot" title="rtl_fm_python" />
 
 # What
 
