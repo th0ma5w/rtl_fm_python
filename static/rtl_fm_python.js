@@ -99,6 +99,14 @@ var GainOptions = React.createClass({
 });
 
 var ModulationOption = React.createClass({
+	handleSubmit: function(){
+ 		var mod=this.refs.mod.getDOMNode().value.trim();
+ 		$.ajax({
+ 			url: '/demod/' + mod,
+ 			dataType: 'json'		
+ 		});
+ 		return false;
+ 	},
 	render: function(){
 		return (<form className="ModulationOption">
 			<select value={this.props.mod} ref="mod" 
