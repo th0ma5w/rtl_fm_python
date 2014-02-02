@@ -31,6 +31,10 @@ allow for control of multiple dongles through web scripting and VPNs.
 - Read the RMS signal level
 - Interact with rtl_fm with Python
 
+# License
+
+GPLv2
+
 # How to Build
 
 - Install the RTL-SDR software 
