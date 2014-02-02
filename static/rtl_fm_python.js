@@ -64,7 +64,7 @@ var AutoGainEnabled = React.createClass({
 	render:	function(){
 		return (
 			<form className="AutoGainOption">
-			<input type="checkbox" onChange={this.handleSubmit} checked={this.props.autogain} ref="autogain" />
+			<input type="checkbox" onClick={this.handleSubmit} checked={this.props.autogain} ref="autogain" />
 			Auto
 			</form>
 		)
@@ -81,42 +81,25 @@ var GainOptions = React.createClass({
 		return false;
 	},
 	render: function(){
+		if (this.props.autogain) {
+			this.props.gain=this.props.gains[0];
+		}
 		var createOption = function(v,i){
 			return <option value={v}>{v}</option>;
 		}
-		return (<div>
+		return (
+			<form className="GainOptions">
 			<select value={this.props.gain} ref="gain" onChange={this.handleSubmit}>
 			{this.props.gains.map(createOption)}
 			</select>
 			Gain
-			</div>
+			</form>
 		)
 	}
 });
 
 var ModulationOption = React.createClass({
-	componentDidMount:
-		function(){
-			this.props.focused=false;
-		},
-	handleFocus:
-		function(){
-			this.props.focused=true;
-		},
-	handleBlur:
-		function(){
-			this.props.focused=false;
-		},
-	handleSubmit: function(){
-		var mod=this.refs.mod.getDOMNode().value.trim();
-		$.ajax({
-			url: '/demod/' + mod,
-			dataType: 'json'		
-		});
-		return false;
-	},
 	render: function(){
-		if (!this.props.focused){
 		return (<form className="ModulationOption">
 			<select value={this.props.mod} ref="mod" 
 				onChange={this.handleSubmit}
@@ -130,7 +113,6 @@ var ModulationOption = React.createClass({
 			</select>
 			Modulation
 			</form>)
-		}
 	}
 });
 
@@ -177,7 +159,7 @@ var State = React.createClass({
     	    <br />
     	    <FrequencyForm freq={this.state.data.freq_s} />
     	    <ModulationOption mod={this.state.data.mod} />
-    	    <GainOptions gains={dongle_gains} gain={this.state.data.gain} />
+    	    <GainOptions gains={dongle_gains} gain={this.state.data.gain} autogain={this.state.data.autogain} />
     	    <AutoGainEnabled autogain={this.state.data.autogain} />
     	    </div>
     );
