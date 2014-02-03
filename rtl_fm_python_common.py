@@ -55,6 +55,9 @@ def mag(value, e, suffix):
 	r = str(r).rjust(e,'0')
 	s = "%s.%s" % (i,r)
 	while (s[-1]=="0" or s[-1]=="."):
+		if s[-1]==".":
+			s=s[:-1]
+			break
 		s=s[:-1]
 	return s + suffix
 
