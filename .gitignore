@@ -6,8 +6,8 @@
 # Packages
 *.egg
 *.egg-info
-dist
 build
+dist
 eggs
 parts
 bin
